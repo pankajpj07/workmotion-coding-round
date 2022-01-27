@@ -1,0 +1,102 @@
+.employee-details {
+  display: flex;
+  margin: 100px 0 32px 0;
+}
+.employee-details div {
+  align-self: center;
+}
+.employee-data {
+  width: 35%;
+}
+.employee-data:hover {
+  cursor: pointer;
+  transform: scale(1.01);
+  transition: all 0.4s;
+}
+.employee-status {
+  margin-left: 30px;
+  display: flex;
+}
+.breadcrumb {
+  list-style: none;
+  overflow: hidden;
+  font: 18px Helvetica, Arial, Sans-Serif;
+  margin: 40px;
+  padding: 0;
+}
+
+.activeState {
+  color: white;
+  text-decoration: none;
+  padding: 20px 10px 20px 55px;
+  background: rgb(0, 54, 46);
+  position: relative;
+  display: block;
+}
+.activeState:before,
+.activeState:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  z-index: 2;
+}
+.activeState:before {
+  border-left: 30px solid black;
+
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+.activeState:after {
+  border-left: 30px solid rgb(0, 54, 46);
+  left: 100%;
+}
+
+.activeState:hover {
+  cursor: pointer;
+  color: green;
+}
+.inActiveState {
+  color: black;
+  text-decoration: none;
+  padding: 20px 10px 20px 55px;
+  position: relative;
+  display: block;
+  float: left;
+  background: transparent !important;
+}
+
+.inActiveState:before,
+.inActiveState:after {
+  content: " ";
+  display: block;
+  width: 0;
+  height: 0;
+  border-top: 50px solid transparent; /* Go big on the size, and let overflow hide */
+  border-bottom: 50px solid transparent;
+  position: absolute;
+  top: 50%;
+  margin-top: -50px;
+  z-index: 2;
+}
+.inActiveState:before {
+  border-left: 30px solid black;
+  margin-left: 1px;
+  left: 100%;
+  z-index: 1;
+}
+.inActiveState:after {
+  border-left: 30px solid white;
+  left: 100%;
+}
+
+.inActiveState:hover {
+  cursor: pointer;
+  color: red;
+}

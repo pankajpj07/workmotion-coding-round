@@ -1,0 +1,27 @@
+.wm-title {
+  margin-bottom: 32px;
+  color: #00362e;
+}
+.wm-title h1 {
+  font-size: 4vw !important;
+}
+
+.wm-description {
+  margin-bottom: 45px;
+  max-width: 340px;
+  line-height: 150%;
+  color: #3a3a3a;
+}
+.btn-prime {
+  border-radius: 50px;
+  background: #eb3b81;
+  height: 56px;
+  padding-left: 48px;
+  padding-right: 48px;
+  transition: #eb3b81;
+  display: flex;
+  align-items: center;
+  border-color: #eb3b81;
+  justify-content: space-between;
+  color: white;
+}

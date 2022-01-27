@@ -1,0 +1,9 @@
+.App {
+  text-align: center;
+}
+
+.divider {
+  display: flex;
+  border-top: solid 1px transparent;
+  margin: 100px auto;
+}
