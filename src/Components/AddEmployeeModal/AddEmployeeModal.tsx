@@ -1,6 +1,7 @@
 import "./style.css";
 import React, { useState } from "react";
 import { Modal, Button, Form } from "react-bootstrap";
+import { addEmployee } from "../../api/apiEndpoints";
 
 interface AddEmployeeModalProps {
   show?: boolean;
@@ -20,29 +21,13 @@ const AddEmployeeModal = (props: AddEmployeeModalProps) => {
   // on submitting employee details
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    const { name = "", Designation = "", status = "" } = newData;
-
-    async function postData(url = "", data = {}) {
-      const response = await fetch(url, {
-        method: "POST",
-        mode: "cors",
-        cache: "no-cache",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(data),
-      });
-      return response.json();
-    }
-
-    postData("https://61f16018072f86001749f198.mockapi.io/employees", newData)
-      .then((data) => {
+    addEmployee(newData)
+      .then((response: any) => {
         setNewData({});
         setMsg("Employee Added");
         setTimeout(() => setMsg(""), 2500);
-        console.log(data);
       })
-      .catch((err) => console.error("ERROR:", err));
+      .catch((err: any) => console.error("ERROR:", err));
   };
   return (
     <>
@@ -77,12 +62,12 @@ const AddEmployeeModal = (props: AddEmployeeModalProps) => {
             </Form.Group>
             <Form.Select
               required
-              value={status}
+              defaultValue={status}
               aria-label="Default select example"
               placeholder="Select the status"
               onChange={(e) => handleChange({ status: e.target.value })}
             >
-              <option value="" disabled selected>
+              <option value="" disabled>
                 Select your status
               </option>
               <option value="Added">Added</option>
